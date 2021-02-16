@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+  <ItemGroup>
+    <!--Shared config files that have to exist at root level to work properly.-->
+    <ConfigFilesToCopy Include="$(MSBuildThisFileDirectory)linting\.editorconfig" />
+  </ItemGroup>
+  <!-- Package versions for package references across all projects -->
+  <ItemGroup>
+    <PackageReference Update="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Update="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Update="SmartanAlyzers.ExceptionAnalyzer" Version="1.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <!--Ensures our config files are up to date.-->
+  <Target Name="CopyFiles" BeforeTargets="Build">
+    <Copy SourceFiles="@(ConfigFilesToCopy)"
+          SkipUnchangedFiles = "true"
+          DestinationFolder="$(MSBuildThisFileDirectory)" />
+  </Target>
+
+</Project>
