@@ -1,0 +1,1 @@
+cog-umbraco-essentials
