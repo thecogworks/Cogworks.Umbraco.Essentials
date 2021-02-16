@@ -15,12 +15,6 @@
     <BuildInParallel>false</BuildInParallel>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="StyleCop.Analyzers" IsImplicitlyDefined="true"  />
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" IsImplicitlyDefined="true"  />
-    <PackageReference Include="SmartanAlyzers.ExceptionAnalyzer" IsImplicitlyDefined="true"  />
-  </ItemGroup>
-
   <!-- Additional files which are consumed by all projects -->
   <ItemGroup>
     <AdditionalFiles Include="$(MSBuildThisFileDirectory)linting\stylecop.json" />
