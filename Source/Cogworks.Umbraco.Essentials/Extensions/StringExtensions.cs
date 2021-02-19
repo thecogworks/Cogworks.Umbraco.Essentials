@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web;
 using Umbraco.Core;
 
@@ -60,6 +61,16 @@ namespace Cogworks.Umbraco.Essentials.Extensions
             return portIndex < 0
                 ? ipAddress
                 : ipAddress.Substring(0, portIndex);
+        }
+
+        public static string AddOrUpdateQueryParameter(this string url, string queryKey, string queryValue)
+        {
+            var splitted = url.Split('?');
+            var queryString = HttpUtility.ParseQueryString(splitted.Skip(1).FirstOrDefault() ?? string.Empty);
+
+            queryString[queryKey] = queryValue;
+
+            return $"{splitted.FirstOrDefault()}?{queryString}";
         }
     }
 }
