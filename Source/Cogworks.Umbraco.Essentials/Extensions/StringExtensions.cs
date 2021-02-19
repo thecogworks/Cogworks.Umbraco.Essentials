@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web;
+using Cogworks.Umbraco.Essentials.Constants;
 using Umbraco.Core;
 
 namespace Cogworks.Umbraco.Essentials.Extensions
@@ -65,7 +66,7 @@ namespace Cogworks.Umbraco.Essentials.Extensions
 
         public static string AddOrUpdateQueryParameter(this string url, string queryKey, string queryValue)
         {
-            var splitted = url.Split('?');
+            var splitted = url.Split(StringConstants.Separators.QuestionMark.ToCharArray());
             var queryString = HttpUtility.ParseQueryString(splitted.Skip(1).FirstOrDefault() ?? string.Empty);
 
             queryString[queryKey] = queryValue;

@@ -6,6 +6,7 @@
         {
             public const string Comma = ",";
             public const string Space = " ";
+            public const string QuestionMark = "?";
         }
     }
 }
