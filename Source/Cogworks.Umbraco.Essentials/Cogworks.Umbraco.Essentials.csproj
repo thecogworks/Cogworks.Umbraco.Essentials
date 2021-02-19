@@ -248,8 +248,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionResults\RedirectWithMessageResult.cs" />
     <Compile Include="Attributes\ActionFilters\PreventDuplicateRequestAttribute.cs" />
     <Compile Include="Constants\ErrorConstants.cs" />
+    <Compile Include="Constants\TempDataConstants.cs" />
+    <Compile Include="Constants\TempDataConstants.Messages.cs" />
+    <Compile Include="Extensions\ RedirectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
