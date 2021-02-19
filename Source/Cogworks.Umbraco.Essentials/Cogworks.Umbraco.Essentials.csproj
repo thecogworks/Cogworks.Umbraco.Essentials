@@ -255,6 +255,7 @@
     <Compile Include="Constants\StringConstants.cs" />
     <Compile Include="Constants\TempDataConstants.cs" />
     <Compile Include="Constants\TempDataConstants.Messages.cs" />
+    <Compile Include="ExtendedTypes\StringWriterEncoded.cs" />
     <Compile Include="Extensions\ RedirectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
