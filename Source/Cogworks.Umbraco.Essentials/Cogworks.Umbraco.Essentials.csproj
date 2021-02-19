@@ -251,6 +251,8 @@
     <Compile Include="ActionResults\RedirectWithMessageResult.cs" />
     <Compile Include="Attributes\ActionFilters\PreventDuplicateRequestAttribute.cs" />
     <Compile Include="Constants\ErrorConstants.cs" />
+    <Compile Include="Constants\StringConstants.SeparatosConstants.cs" />
+    <Compile Include="Constants\StringConstants.cs" />
     <Compile Include="Constants\TempDataConstants.cs" />
     <Compile Include="Constants\TempDataConstants.Messages.cs" />
     <Compile Include="Extensions\ RedirectExtensions.cs" />
