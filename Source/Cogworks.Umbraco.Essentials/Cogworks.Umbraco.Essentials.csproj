@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.3.3.1\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.3.3.1\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
   <Import Project="..\packages\Microsoft.NetFramework.Analyzers.3.3.1\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.3.3.1\build\Microsoft.NetFramework.Analyzers.props')" />
@@ -250,6 +250,7 @@
   <ItemGroup>
     <Compile Include="ActionResults\RedirectWithMessageResult.cs" />
     <Compile Include="Attributes\ActionFilters\PreventDuplicateRequestAttribute.cs" />
+    <Compile Include="Configurations\AppSettingsConfiguration.cs" />
     <Compile Include="Constants\ErrorConstants.cs" />
     <Compile Include="Constants\StringConstants.SeparatosConstants.cs" />
     <Compile Include="Constants\StringConstants.cs" />
