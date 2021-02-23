@@ -256,7 +256,6 @@
     <Compile Include="Constants\TempDataConstants.cs" />
     <Compile Include="Constants\TempDataConstants.Messages.cs" />
     <Compile Include="ExtendedTypes\StringWriterEncoded.cs" />
-    <Compile Include="Extensions\ RedirectExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\GenericExtensions.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
@@ -266,6 +265,7 @@
     <Compile Include="Extensions\MediaExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\PublishedContentExtensions.cs" />
+    <Compile Include="Extensions\RedirectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TempDataExtensions.cs" />
     <Compile Include="Helpers\AppSettings.cs" />
