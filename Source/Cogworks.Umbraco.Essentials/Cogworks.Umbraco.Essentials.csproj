@@ -272,6 +272,8 @@
     <Compile Include="Helpers\ExpressionHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaseEmailService.cs" />
+    <Compile Include="Services\Interfaces\IPublicAccessService.cs" />
+    <Compile Include="Services\PublicAccessService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
