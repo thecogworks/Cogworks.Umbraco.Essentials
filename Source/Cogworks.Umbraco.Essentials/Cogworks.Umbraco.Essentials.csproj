@@ -250,6 +250,8 @@
   <ItemGroup>
     <Compile Include="ActionResults\RedirectWithMessageResult.cs" />
     <Compile Include="Attributes\ActionFilters\PreventDuplicateRequestAttribute.cs" />
+    <Compile Include="Attributes\AngularAttributes\AngularJsonMediaFormatterCamelCase.cs" />
+    <Compile Include="Attributes\AngularAttributes\AngularJsonOnlyConfigurationCamelCaseAttribute.cs" />
     <Compile Include="Configurations\AppSettingsConfiguration.cs" />
     <Compile Include="Configurations\CookieConfigurations.cs" />
     <Compile Include="Constants\ErrorConstants.cs" />
