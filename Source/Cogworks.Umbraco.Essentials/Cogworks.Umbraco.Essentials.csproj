@@ -272,6 +272,7 @@
     <Compile Include="Extensions\TempDataExtensions.cs" />
     <Compile Include="Handlers\RobotsHandler.cs" />
     <Compile Include="Helpers\AppSettings.cs" />
+    <Compile Include="Helpers\DomainHelpers.cs" />
     <Compile Include="Helpers\ExpressionHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaseEmailService.cs" />

@@ -73,5 +73,17 @@ namespace Cogworks.Umbraco.Essentials.Extensions
 
             return $"{splitted.FirstOrDefault()}?{queryString}";
         }
+
+        public static string RemoveTrailingSlash(this string url)
+        {
+            if (!url.HasValue())
+            {
+                return string.Empty;
+            }
+
+            return url.LastIndexOf('/').Equals(url.Length - 1)
+                ? url.Substring(0, url.Length - 1)
+                : url;
+        }
     }
 }
