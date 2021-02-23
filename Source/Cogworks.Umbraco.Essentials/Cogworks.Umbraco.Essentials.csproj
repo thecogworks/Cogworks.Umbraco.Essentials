@@ -288,6 +288,7 @@
     <Compile Include="Services\UmbracoMemberGroupInitializerService.cs" />
     <Compile Include="Utilities\MvcUtil.cs" />
     <Compile Include="Utilities\TestDetector.cs" />
+    <Compile Include="Utilities\ValueObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
