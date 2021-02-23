@@ -276,6 +276,7 @@
     <Compile Include="Services\Interfaces\IUmbracoMemberGroupInitializerService.cs" />
     <Compile Include="Services\PublicAccessService.cs" />
     <Compile Include="Services\UmbracoMemberGroupInitializerService.cs" />
+    <Compile Include="Utilities\MvcUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
