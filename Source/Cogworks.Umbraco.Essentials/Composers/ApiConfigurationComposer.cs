@@ -8,7 +8,9 @@ using Umbraco.Core.Composing;
 
 namespace Cogworks.Umbraco.Essentials.Composers
 {
+#pragma warning disable CA1812 // Class never use
     internal class ApiConfigurationComposer : IUserComposer
+#pragma warning restore CA1812 // Class never use
     {
         public void Compose(Composition composition)
         {
