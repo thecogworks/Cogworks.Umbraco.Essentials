@@ -254,7 +254,6 @@
     <Compile Include="Attributes\AngularAttributes\AngularJsonOnlyConfigurationCamelCaseAttribute.cs" />
     <Compile Include="Components\ApiConfigurationComponent.cs" />
     <Compile Include="Composers\ApiConfigurationComposer.cs" />
-    <Compile Include="Composers\ExternalIndexComposer.cs" />
     <Compile Include="Composers\InfrastructureComposer.cs" />
     <Compile Include="Configurations\AppSettingsConfiguration.cs" />
     <Compile Include="Configurations\CookieConfigurations.cs" />
