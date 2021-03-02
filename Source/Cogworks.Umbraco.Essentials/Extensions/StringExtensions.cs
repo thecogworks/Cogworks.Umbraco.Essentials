@@ -1,0 +1,89 @@
+﻿using System;
+using System.Linq;
+using System.Web;
+using Cogworks.Umbraco.Essentials.Constants;
+using Umbraco.Core;
+
+namespace Cogworks.Umbraco.Essentials.Extensions
+{
+    public static class StringExtensions
+    {
+        public static bool HasValue(this string input)
+            => !string.IsNullOrWhiteSpace(input);
+
+        public static bool IsUmbracoPreview(this string input)
+            => input.HasValue() && input.StartsWith("/umbraco/preview/");
+
+        public static string ToAbsoluteUrl(this string url)
+        {
+            if (!url.HasValue())
+            {
+                return url;
+            }
+
+            if (url.InvariantStartsWith("http://") || url.InvariantStartsWith("https://"))
+            {
+                return url;
+            }
+
+            if (HttpContext.Current == null)
+            {
+                return url;
+            }
+
+            if (url.StartsWith("/"))
+            {
+                url = url.Insert(0, "~");
+            }
+
+            if (!url.StartsWith("~/"))
+            {
+                url = url.Insert(0, "~/");
+            }
+
+            var requestUrl = HttpContext.Current.Request.Url;
+            var port = requestUrl.Port != 80 ? ":" + requestUrl.Port : string.Empty;
+
+            return $"{requestUrl.Scheme}://{requestUrl.Host}{port}{VirtualPathUtility.ToAbsolute(url)}";
+        }
+
+        public static Uri ToUri(this string urlString)
+            => urlString.HasValue()
+                ? new Uri(urlString)
+                : null;
+
+        public static Udi ToDocumentUdi(this string documentUdi)
+            => Udi.Parse(documentUdi);
+
+        public static string GetIpAddressWithoutPort(this string ipAddress)
+        {
+            var portIndex = ipAddress.IndexOf(':');
+
+            return portIndex < 0
+                ? ipAddress
+                : ipAddress.Substring(0, portIndex);
+        }
+
+        public static string AddOrUpdateQueryParameter(this string url, string queryKey, string queryValue)
+        {
+            var splitted = url.Split(StringConstants.Separators.QuestionMark.ToCharArray());
+            var queryString = HttpUtility.ParseQueryString(splitted.Skip(1).FirstOrDefault() ?? string.Empty);
+
+            queryString[queryKey] = queryValue;
+
+            return $"{splitted.FirstOrDefault()}?{queryString}";
+        }
+
+        public static string RemoveTrailingSlash(this string url)
+        {
+            if (!url.HasValue())
+            {
+                return string.Empty;
+            }
+
+            return url.LastIndexOf('/').Equals(url.Length - 1)
+                ? url.Substring(0, url.Length - 1)
+                : url;
+        }
+    }
+}
