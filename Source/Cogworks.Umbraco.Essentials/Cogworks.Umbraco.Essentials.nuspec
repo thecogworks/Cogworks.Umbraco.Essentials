@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Cogworks.Umbraco.Essentials</id>
+    <version>$version$</version>
+    <title>Cogworks.Essentials</title>
+    <authors>Cogworks</authors>
+    <owners>Cogworks</owners>
+    <projectUrl>https://github.com/thecogworks/cog-essentials</projectUrl>
+    <repository type="git" url="https://github.com/thecogworks/cog-essentials" />
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Umbraco essentials.</description>
+    <copyright>The Cogworks Limited 2021</copyright>
+    <tags>Umbraco, Essentials, Cogworks, dotnet, net, csharp, backend</tags>
+  </metadata>
+  <dependencies>
+      <dependency id="UmbracoCms.Core" version="8.9.1" />
+      <dependency id="UmbracoCms.Web" version="8.9.1" />
+    </dependencies>
+  <files>
+    <file src="bin\Release\**\Cogworks.Umbraco.Essentials.dll" target="lib\net472" />
+  </files>
+</package>
