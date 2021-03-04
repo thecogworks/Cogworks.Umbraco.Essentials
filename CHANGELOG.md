@@ -1,3 +1,12 @@
+## [0.9.1](https://github.com/thecogworks/cog-umbraco-essentials/compare/0.9.0...0.9.1) (2021-03-04)
+
+
+### Features
+
+* added nuspec file ([14b1505](https://github.com/thecogworks/cog-umbraco-essentials/commit/14b1505c2742b02a67bbffae4f2292aed2280214))
+
+
+
 # [0.9.0](https://github.com/thecogworks/cog-umbraco-essentials/compare/8183fb066c29631f139eb5fecea8ac980d888882...0.9.0) (2021-03-02)
 
 
