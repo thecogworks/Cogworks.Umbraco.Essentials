@@ -15,11 +15,11 @@
 | <!-- --> | <!-- --> |
 | -------- | -------- |
 | **Changelog** | [![Changelog generator](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/changelog.yml/badge.svg)](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/changelog.yml)|
-| **GitFlow** | [![Git Flow](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/gitflow.yml/badge.svg?branch=master)](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/gitflow.yml) |
-| **Build** | [![Build](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/build.yml) |
-| **MyGet** | [![(NuGet) MyGet Release](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/release-myget.yml/badge.svg?branch=master)](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/release-myget.yml) |
-| **GitHub Packages** | [![(NuGet) GitHub Packages Release](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/release-github.yml/badge.svg?branch=master)](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/release-github.yml) |
-| **Our.Umbraco Package** | [![(Umbraco) Our.Umbraco Package Generation](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/release-umbraco.yml/badge.svg?branch=master)](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/release-umbraco.yml) |
+| **GitFlow** | [![Git Flow](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/gitflow.yml/badge.svg)](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/gitflow.yml) |
+| **Build** | [![Build](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/build.yml/badge.svg)](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/build.yml) |
+| **MyGet** | [![(NuGet) MyGet Release](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/release-myget.yml/badge.svg)](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/release-myget.yml) |
+| **GitHub Packages** | [![(NuGet) GitHub Packages Release](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/release-github.yml/badge.svg)](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/release-github.yml) |
+| **Our.Umbraco Package** | [![(Umbraco) Our.Umbraco Package Generation](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/release-umbraco.yml/badge.svg)](https://github.com/thecogworks/cog-umbraco-essentials/actions/workflows/release-umbraco.yml) |
 |<!-- --> | <!-- -->|
 
 ##### Packages
