@@ -1,3 +1,12 @@
+# [1.0.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/0.9.3...1.0.0) (2021-03-05)
+
+
+### Features
+
+* added nuget release workflow ([7b76d80](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/7b76d805776d2b1ae378232be971fb38fed537e8))
+
+
+
 ## [0.9.3](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/0.9.2...0.9.3) (2021-03-05)
 
 
