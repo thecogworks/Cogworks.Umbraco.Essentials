@@ -13,12 +13,14 @@
     <description>Umbraco essentials.</description>
     <copyright>The Cogworks Limited 2021</copyright>
     <tags>Umbraco, Essentials, Cogworks, dotnet, net, csharp, backend</tags>
-  </metadata>
-  <dependencies>
+    <dependencies>
+    <group targetFramework="net472">
       <dependency id="UmbracoCms.Core" version="8.9.1" />
       <dependency id="UmbracoCms.Web" version="8.9.1" />
-    </dependencies>
+    </group>
+  </dependencies>
+  </metadata>
   <files>
-    <file src="bin\Release\**\Cogworks.Umbraco.Essentials.dll" target="lib\net472" />
+    <file src="bin\Release\**\Cogworks.Umbraco.Essentials.dll" target="lib/net472" />
   </files>
 </package>
