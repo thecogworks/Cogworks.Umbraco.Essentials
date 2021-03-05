@@ -10,7 +10,7 @@
     <repository type="git" url="https://github.com/thecogworks/Cogworks.Umbraco.Essentials" />
     <license type="expression">MIT</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Umbraco essentials.</description>
+    <description>Set of the Umbraco-related (C#, ASP.NET MVC) essentials including common components, extensions, helpers, services and more.</description>
     <copyright>The Cogworks Limited 2021</copyright>
     <tags>Umbraco, Essentials, Cogworks, dotnet, net, csharp, backend</tags>
     <dependencies>

@@ -17,6 +17,7 @@
 | **Changelog** | [![Changelog generator](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/changelog.yml/badge.svg)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/changelog.yml)|
 | **GitFlow** | [![Git Flow](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/gitflow.yml/badge.svg)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/gitflow.yml) |
 | **Build** | [![Build](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/build.yml/badge.svg)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/build.yml) |
+| **NuGet Release** | [![(NuGet) NuGet Release](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-nuget.yml/badge.svg)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-nuget.yml) |
 | **GitHub Packages** | [![(NuGet) GitHub Packages Release](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-github.yml/badge.svg)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-github.yml) |
 | **Our.Umbraco Package** | [![(Umbraco) Our.Umbraco Package Generation](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-umbraco.yml/badge.svg)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-umbraco.yml) |
 |<!-- --> | <!-- -->|
@@ -25,6 +26,7 @@
 
 | <!-- --> | <!-- --> |
 | -------- | -------- |
+| **NuGet** | [![NuGet Version](https://img.shields.io/nuget/v/Cogworks.Umbraco.Essentials)](https://www.nuget.org/packages/Cogworks.Umbraco.Essentials/)
 | **GitHub Packages** | [![Github Packages](https://img.shields.io/static/v1?label=&message=github-packages&color=9cf&style=flat-square)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/packages/646974) |
 | **Our.Umbraco Package** | [![Our.Umbraco](https://img.shields.io/static/v1?label=&message=our.umbraco&color=lightgray&style=flat-square)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-umbraco.yml) |
 |<!-- --> | <!-- -->|
@@ -46,7 +48,7 @@
 
 ## About <a name = "about"></a>
 
-Umbraco essentials.
+Set of the Umbraco-related (C#, ASP.NET MVC) essentials including common components, extensions, helpers, services and more.
 
 ## Usage <a name="usage"></a>
 
