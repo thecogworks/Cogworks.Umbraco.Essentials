@@ -7,7 +7,7 @@
 
 <div align="center">
 
-[![Project Code](https://img.shields.io/static/v1?label=cog%20umbraco%20essentials&message=cog-umbraco-essentials&color=lightgray&style=flat-square)]() [![Version](https://img.shields.io/static/v1?label=&message=version&color=informational&style=flat-square)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/releases) [![License](https://img.shields.io/badge/license-MIT-4c9182.svg)](LICENSE.md)
+[![Project Code](https://img.shields.io/static/v1?label=&message=Cogworks.Umbraco.Essentials&color=lightgray&style=flat-square)]() [![Version](https://img.shields.io/static/v1?label=&message=version&color=informational&style=flat-square)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/releases) [![License](https://img.shields.io/badge/license-MIT-4c9182.svg)](LICENSE.md)
 
 
 ##### Build status

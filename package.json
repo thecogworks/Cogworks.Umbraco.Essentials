@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "name": "cogworks-umbraco-essentials",
-  "code": "cog-umbraco-essentials",
+  "code": "Cogworks.Umbraco.Essentials",
   "description": "Umbraco essentials.",
   "author": "Cogworks",
   "license": "MIT",
