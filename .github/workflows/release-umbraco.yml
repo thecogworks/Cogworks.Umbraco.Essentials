@@ -47,7 +47,7 @@ jobs:
       - name: Extract NuGet file
         shell: pwsh
         run: |
-          Install-Package -Name ${{ env.PROJECT_NAME }} -Source ${{ env.NUGET_OUTPUT }} -Destination ${{ env.NUGET_EXTRACTED }}
+          Install-Package -Name ${{ env.PROJECT_NAME }} -Source ${{ env.NUGET_OUTPUT }} -Destination ${{ env.NUGET_EXTRACTED }} -SkipDependencies
 
       - name: Copy package dlls
         shell: bash
