@@ -1,3 +1,12 @@
+## [0.9.3](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/0.9.2...0.9.3) (2021-03-05)
+
+
+### Bug Fixes
+
+* added skipping dependencies ([875cfb3](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/875cfb3633481b144ca21c08d8a15b0c073dac48))
+
+
+
 ## [0.9.2](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/0.9.1...0.9.2) (2021-03-05)
 
 
