@@ -1,3 +1,12 @@
+## [1.0.1](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.0.0...1.0.1) (2021-03-05)
+
+
+### Features
+
+* added github releaser ([a34555c](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/a34555c0b2c5a33b3e47cb23824ddbe8984a716b))
+
+
+
 # [1.0.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/0.9.3...1.0.0) (2021-03-05)
 
 
