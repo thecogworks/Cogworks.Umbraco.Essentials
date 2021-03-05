@@ -1,3 +1,12 @@
+## [0.9.2](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/0.9.1...0.9.2) (2021-03-05)
+
+
+### Bug Fixes
+
+* fixed nuspec dependencies structure ([9ccdfba](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/9ccdfbac9481f7cc6e64dca5e47c679c696f1eae))
+
+
+
 ## [0.9.1](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/0.9.0...0.9.1) (2021-03-04)
 
 
