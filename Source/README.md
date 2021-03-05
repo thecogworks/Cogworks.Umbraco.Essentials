@@ -17,7 +17,6 @@
 | **Changelog** | [![Changelog generator](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/changelog.yml/badge.svg)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/changelog.yml)|
 | **GitFlow** | [![Git Flow](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/gitflow.yml/badge.svg)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/gitflow.yml) |
 | **Build** | [![Build](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/build.yml/badge.svg)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/build.yml) |
-| **MyGet** | [![(NuGet) MyGet Release](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-myget.yml/badge.svg)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-myget.yml) |
 | **GitHub Packages** | [![(NuGet) GitHub Packages Release](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-github.yml/badge.svg)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-github.yml) |
 | **Our.Umbraco Package** | [![(Umbraco) Our.Umbraco Package Generation](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-umbraco.yml/badge.svg)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-umbraco.yml) |
 |<!-- --> | <!-- -->|
@@ -26,7 +25,6 @@
 
 | <!-- --> | <!-- --> |
 | -------- | -------- |
-| **MyGet** | [![MyGet](https://img.shields.io/static/v1?label=&message=myget&color=informational&style=flat-square)](https://www.myget.org/feed/cogworks-packages/package/nuget/Cogworks.Essentials) |
 | **GitHub Packages** | [![Github Packages](https://img.shields.io/static/v1?label=&message=github-packages&color=9cf&style=flat-square)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/packages/646974) |
 | **Our.Umbraco Package** | [![Our.Umbraco](https://img.shields.io/static/v1?label=&message=our.umbraco&color=lightgray&style=flat-square)](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/actions/workflows/release-umbraco.yml) |
 |<!-- --> | <!-- -->|
@@ -107,18 +105,6 @@ public class (TestedClassName)Tests
 public void/Task/ValueTask Should_ExpectedBehaviour_When_StateUnderTest()
 ```
 
-**Example**:
-
-```csharp
-public class RateTests
-{
-    [Fact]
-    public void Should_ThrowRateTypeException_When_DisablingRateOnEmptyProject() => Assert.Throws<RateTypeException>(()
-        => new Project(new ProjectId(Guid.NewGuid()), new DateTime(2017, 1, 1))
-                .DisableRate("r1", DateTime.Now));
-}
-```
-
 #### Integration Tests
 
 ##### Naming Convention
@@ -134,49 +120,4 @@ public class RateTests
          public Task/void Should_SomeAction_SomeOutcome
      }
  }
-```
-
-**Example**:
-
-```csharp
-public class RatesSpecs : GivenServices
-{
-    /* Here goes some configuration */
-
-     public class Given_2RateTypes1Overriden : RatesSpecs
-        {
-            public Given_2RateTypes1Overriden() => Project
-                .WithRate(3, Start, name: Day)
-                .WithRate(4, Start, WorkerId)
-                .Build();
-
-            [Fact]
-            public async Task Should_Return_1Default() => (await GetRatesAsync(WorkerId, FirstRateStart, FirstRateEnd))
-                .Should().Contain(rate => rate.ClientRate == 3);
-
-            [Fact]
-            public async Task Should_NotReturn_OverridenDefault() => (await GetRatesAsync(WorkerId, FirstRateStart, FirstRateEnd))
-                .Should().NotContain(rate => rate.ClientRate == 2);
-        }
-
-        public class Given_2OverridenRateTypes : RatesSpecs
-        {
-            public Given_2OverridenRateTypes() => Project
-                .WithRate(2, Start, name: Day)
-                .WithRate(3, Start, WorkerId, Day)
-                .WithRate(3, Start, WorkerId)
-                .Build();
-
-            [Fact]
-            public async Task Should_NotReturn_Defaults() => (await GetRatesAsync(WorkerId, FirstRateStart, FirstRateEnd))
-                .Should().NotContain(rate => rate.ClientRate == 2);
-        }
-
-        public class Given_RateStartedBeforeProjectStart : RatesSpecs
-        {
-            [Fact]
-            public void Should_Throw_RateTypeException()
-                => Assert.Throws<RateTypeException>(() => Project.WithRate(3, Start.AddDays(-1), name: Day));
-        }
-}
 ```
