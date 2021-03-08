@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cogworks.Essentials.Extensions;
 using Cogworks.Umbraco.Essentials.Extensions;
 using Cogworks.Umbraco.Essentials.Services.Interfaces;
 using Umbraco.Core.Models;

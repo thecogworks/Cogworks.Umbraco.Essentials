@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using Cogworks.Essentials.Extensions;
 
 namespace Cogworks.Umbraco.Essentials.Extensions
 {

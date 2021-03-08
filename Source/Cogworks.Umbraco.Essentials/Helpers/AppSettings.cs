@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Configuration;
+using Cogworks.Essentials.Extensions;
 using Cogworks.Umbraco.Essentials.Extensions;
 
 namespace Cogworks.Umbraco.Essentials.Helpers
