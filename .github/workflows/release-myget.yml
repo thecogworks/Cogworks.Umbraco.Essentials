@@ -6,9 +6,21 @@ on:
     types:
       - completed
 jobs:
+  configuration:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request' }}
+    runs-on: ubuntu-latest
+    outputs:
+      MYGET_ENABLED: ${{ steps.config.outputs.MYGET_ENABLED }}
+    steps:
+      - name: Get MyGet status
+        id: config
+        run: |
+          echo "::set-output name=MYGET_ENABLED::${{ secrets.MYGET_ENABLED }}"
+
   myget_release:
     name: MyGet Release
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event_name != 'pull_request' }}
+    needs: [ "configuration" ]
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request' && needs.configuration.outputs.MYGET_ENABLED == 'true' }}
     runs-on: ubuntu-latest
     env:
       # Nuget Setup
