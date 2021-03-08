@@ -1,4 +1,5 @@
-﻿using Umbraco.Core.Models;
+﻿using Cogworks.Essentials.Extensions;
+using Umbraco.Core.Models;
 
 namespace Cogworks.Umbraco.Essentials.Extensions
 {

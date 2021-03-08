@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web;
+using Cogworks.Essentials.Extensions;
 using Cogworks.Umbraco.Essentials.Constants;
 using Umbraco.Core;
 
@@ -8,9 +9,6 @@ namespace Cogworks.Umbraco.Essentials.Extensions
 {
     public static class StringExtensions
     {
-        public static bool HasValue(this string input)
-            => !string.IsNullOrWhiteSpace(input);
-
         public static bool IsUmbracoPreview(this string input)
             => input.HasValue() && input.StartsWith("/umbraco/preview/");
 
@@ -72,18 +70,6 @@ namespace Cogworks.Umbraco.Essentials.Extensions
             queryString[queryKey] = queryValue;
 
             return $"{splitted.FirstOrDefault()}?{queryString}";
-        }
-
-        public static string RemoveTrailingSlash(this string url)
-        {
-            if (!url.HasValue())
-            {
-                return string.Empty;
-            }
-
-            return url.LastIndexOf('/').Equals(url.Length - 1)
-                ? url.Substring(0, url.Length - 1)
-                : url;
         }
     }
 }

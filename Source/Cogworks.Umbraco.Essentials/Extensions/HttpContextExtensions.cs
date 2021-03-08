@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web;
+using Cogworks.Essentials.Extensions;
 using Cogworks.Umbraco.Essentials.Constants;
 using Umbraco.Core.Security;
 using Umbraco.Web.Security;

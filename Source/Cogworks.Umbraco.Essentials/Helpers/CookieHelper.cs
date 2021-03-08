@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using Cogworks.Essentials.Extensions;
 using Cogworks.Umbraco.Essentials.Configurations;
 using Cogworks.Umbraco.Essentials.Extensions;
 
