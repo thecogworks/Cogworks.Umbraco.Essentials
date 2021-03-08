@@ -17,6 +17,9 @@ jobs:
       NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
       NUGET_FEED: https://api.nuget.org/v3/index.json
 
+      Test: ${{ github.event_name }}
+      Another_TEST: ${{ github }}
+
       # Project Setup
       PROJECT_NAME: 'Cogworks.Umbraco.Essentials'
 
