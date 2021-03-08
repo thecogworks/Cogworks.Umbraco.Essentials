@@ -24,6 +24,12 @@ jobs:
       PROJECT_NAME: 'Cogworks.Umbraco.Essentials'
 
     steps:
+      - name: Test
+        shell: bash
+        run: |
+          echo ${{ github.event_name }}
+          echo ${{ github.event }}
+          echo ${{ github }}
       - name: Checkout master
         uses: actions/checkout@v2
         with:
