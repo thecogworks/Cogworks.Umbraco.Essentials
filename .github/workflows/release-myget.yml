@@ -8,7 +8,7 @@ on:
 jobs:
   myget_release:
     name: MyGet Release
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event_name != 'pull_request' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request' && secrets.MYGET_ENABLED == 'true' }}
     runs-on: ubuntu-latest
     env:
       # Nuget Setup
