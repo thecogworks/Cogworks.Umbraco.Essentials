@@ -21,7 +21,6 @@
       <group targetFramework="netstandard2.0">
         <dependency id="Cogworks.Essentials" version="1.0.2" />
       </group>
-
   </dependencies>
   </metadata>
   <files>
