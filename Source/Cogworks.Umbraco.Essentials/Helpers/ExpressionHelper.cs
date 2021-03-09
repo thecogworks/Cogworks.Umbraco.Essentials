@@ -2,7 +2,7 @@
 
 namespace Cogworks.Umbraco.Essentials.Helpers
 {
-    public static class ExpressionHelpers
+    public static class ExpressionHelper
     {
         public static string GetNameFromMemberExpression(Expression expression)
             => expression switch
