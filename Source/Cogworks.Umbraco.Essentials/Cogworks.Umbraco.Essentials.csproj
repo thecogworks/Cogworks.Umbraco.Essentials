@@ -261,6 +261,7 @@
     <Compile Include="Configurations\AppSettingsConfiguration.cs" />
     <Compile Include="Configurations\CookieConfigurations.cs" />
     <Compile Include="Constants\ErrorConstants.cs" />
+    <Compile Include="Constants\ImageCropConstants.cs" />
     <Compile Include="Constants\RobotsConstants.cs" />
     <Compile Include="Constants\StringConstants.SeparatosConstants.cs" />
     <Compile Include="Constants\StringConstants.cs" />
@@ -270,6 +271,7 @@
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\HtmlStringExtensions.cs" />
     <Compile Include="Extensions\HttpContextExtensions.cs" />
+    <Compile Include="Extensions\ImageCropperExtensions.cs" />
     <Compile Include="Extensions\IContentExtensions.cs" />
     <Compile Include="Extensions\MediaExtensions.cs" />
     <Compile Include="Extensions\PublishedContentExtensions.cs" />
