@@ -17,9 +17,14 @@ namespace Cogworks.Umbraco.Essentials.Builders
             IReadOnlyDictionary<string, string> breakpoints = null,
             string imageClass = null,
             string containerClass = null,
-            string cropSeparator = StringConstants.Separators.Hyphen)
+            string cropSeparator = StringConstants.Separators.Hyphen,
+            int? width = null,
+            int? height = null,
+            bool includeRetina = true,
+            bool enableWebP = false,
+            int? quality = null)
         {
-            var imageSources = BuildResponsiveImageSources(image, cropPrefix, breakpoints, cropSeparator);
+            var imageSources = BuildResponsiveImageSources(image, cropPrefix, breakpoints, cropSeparator, width, height, includeRetina, enableWebP, quality);
 
             if (!imageSources.HasAny())
             {
@@ -39,7 +44,12 @@ namespace Cogworks.Umbraco.Essentials.Builders
         public IReadOnlyDictionary<string, string> BuildResponsiveImageSources(IPublishedContent image,
             string cropPrefix,
             IReadOnlyDictionary<string, string> breakpoints = null,
-            string cropSeparator = StringConstants.Separators.Hyphen)
+            string cropSeparator = StringConstants.Separators.Hyphen,
+            int? width = null,
+            int? height = null,
+            bool includeRetina = true,
+            bool enableWebP = false,
+            int? quality = null)
         {
             breakpoints ??= BreakPointConstants.DefaultBreakpoints;
 
@@ -47,7 +57,9 @@ namespace Cogworks.Umbraco.Essentials.Builders
 
             foreach (var breakPoint in breakpoints)
             {
-                var imageSource = image.GetCropUrls($"{cropPrefix}{cropSeparator}{breakPoint.Key}");
+                var cropAlias = $"{cropPrefix}{cropSeparator}{breakPoint.Key}";
+
+                var imageSource = image.GetCropUrls(cropAlias, width, height, includeRetina, enableWebP, quality);
 
                 if (imageSource.HasValue())
                 {

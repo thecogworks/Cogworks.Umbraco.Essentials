@@ -4,5 +4,8 @@
     {
         public const string Width = "width";
         public const string Height = "height";
+        public const string Format = "format";
+        public const string Quality = "quality";
+        public const string WebP = "webp";
     }
 }
