@@ -8,6 +8,8 @@ namespace Cogworks.Umbraco.Essentials.Models
 
         public string ImageClass { get; set; }
 
+        public string ContainerClass { get; set; }
+
         public string AltText { get; set; }
     }
 }
