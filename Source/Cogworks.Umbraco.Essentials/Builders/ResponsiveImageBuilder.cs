@@ -35,6 +35,7 @@ namespace Cogworks.Umbraco.Essentials.Builders
             {
                 ImageSources = imageSources,
                 ImageClass = imageClass,
+                ContainerClass = containerClass,
                 AltText = altText
             };
 
