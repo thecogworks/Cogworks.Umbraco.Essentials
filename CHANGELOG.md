@@ -1,3 +1,22 @@
+# [1.1.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.0.2...1.1.0) (2021-03-19)
+
+
+### Bug Fixes
+
+* assign container class to responsive image model ([54c50cb](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/54c50cb84e07df950f9e13c64f56012623ae5289))
+* fixed triggering release workflows ([b9f9a28](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/b9f9a289dd7d9add0c7f17b18ec47b2190e56649))
+
+
+### Features
+
+* add image cropper extenstions ([6317528](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/631752889a6b9bf4bd4b328cf7fa59d3c6290496))
+* add responsive image builder ([3ccc352](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/3ccc35214a73faf83a2c837812516a04a84a65ca))
+* added myget controlled by secrets ([9bce4bf](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/9bce4bf17674d9de09f185aea8d92a5745f295e0))
+* reduced implementation ([74028ff](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/74028ff9a945d4d666871748f55a7faa6e1b3244))
+* some logic tweaks and added webp support ([b487397](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/b487397cc7394ee48086d09ee866651ec0a22f73))
+
+
+
 ## [1.0.2](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.0.1...1.0.2) (2021-03-05)
 
 
