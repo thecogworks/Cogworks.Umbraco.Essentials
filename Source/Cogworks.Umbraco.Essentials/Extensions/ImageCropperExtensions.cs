@@ -8,7 +8,7 @@ namespace Cogworks.Umbraco.Essentials.Extensions
 {
     public static class ImageCropperExtensions
     {
-        public static string GetCropUrls(this IPublishedContent image, string cropAlias, int? width = null, int? height = null, bool includeRetina = true)
+        public static string GetCropUrls(this IPublishedContent image, string cropAlias, int? width = null, int? height = null, bool includeRetina = true, bool enableWebP = false, int? quality = null)
         {
             var imageUrl = image.GetCropUrl($"{cropAlias}");
 
@@ -17,9 +17,9 @@ namespace Cogworks.Umbraco.Essentials.Extensions
                 return string.Empty;
             }
 
-            if (width.HasValue || height.HasValue)
+            if (width.HasValue || height.HasValue || enableWebP)
             {
-                imageUrl = UpdateCropDimensions(imageUrl, width, height);
+                imageUrl = UpdateCropSettings(imageUrl, width, height, enableWebP, quality);
             }
 
             if (!includeRetina)
@@ -34,18 +34,32 @@ namespace Cogworks.Umbraco.Essentials.Extensions
                 : imageUrl;
         }
 
-        private static string UpdateCropDimensions(string imageCrop, int? width, int? height)
+        private static string UpdateCropSettings(string imageCrop, int? width, int? height, bool enableWebP, int? quality = null)
         {
             var query = HttpUtility.ParseQueryString(imageCrop);
 
             if (width.HasValue)
             {
+                query.Remove(ImageCropConstants.Width);
                 query[ImageCropConstants.Width] = width.ToString();
             }
 
             if (height.HasValue)
             {
+                query.Remove(ImageCropConstants.Height);
                 query[ImageCropConstants.Height] = height.ToString();
+            }
+
+            if (enableWebP)
+            {
+                query.Remove(ImageCropConstants.Format);
+                query[ImageCropConstants.Format] = ImageCropConstants.WebP;
+
+                if (quality.HasValue())
+                {
+                    query.Remove(ImageCropConstants.Quality);
+                    query[ImageCropConstants.Quality] = quality.ToString();
+                }
             }
 
             return HttpUtility.UrlDecode(query.ToString());
