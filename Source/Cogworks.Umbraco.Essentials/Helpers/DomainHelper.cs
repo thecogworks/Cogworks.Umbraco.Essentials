@@ -12,7 +12,7 @@ using Umbraco.Web.Routing;
 
 namespace Cogworks.Umbraco.Essentials.Helpers
 {
-    public static class DomainHelpers
+    public static class DomainHelper
     {
         public static IPublishedContent GetRootNodeFromDomain(HttpContextBase context, IUmbracoContextFactory umbracoContextFactory = null)
         {
