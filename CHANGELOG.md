@@ -1,3 +1,13 @@
+# [1.2.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.1.0...1.2.0) (2021-04-16)
+
+
+### Bug Fixes
+
+* changed helpers name ([cb0ad75](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/cb0ad75f4fc9a9485e743459300801e6d0aec69a))
+* fixed wrong dependency group ([82bc4d5](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/82bc4d5f4ef325ab89b18cbdfc76d4e29c886235))
+
+
+
 # [1.1.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.0.2...1.1.0) (2021-03-19)
 
 
