@@ -17,8 +17,6 @@
       <group targetFramework="net472">
         <dependency id="UmbracoCms.Core" version="8.9.1" />
         <dependency id="UmbracoCms.Web" version="8.9.1" />
-      </group>
-      <group targetFramework="netstandard2.0">
         <dependency id="Cogworks.Essentials" version="1.0.2" />
       </group>
   </dependencies>
