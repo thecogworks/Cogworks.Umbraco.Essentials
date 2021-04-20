@@ -90,6 +90,7 @@ jobs:
         working-directory: ${{ github.workspace }}
         run: |
           $solutions = Get-ChildItem -Path ${{ env.SOURCE }} -Recurse -Include *.sln
+
           foreach ($solutionFile in $solutions){
             dotnet restore "$solutionFile"
           }
