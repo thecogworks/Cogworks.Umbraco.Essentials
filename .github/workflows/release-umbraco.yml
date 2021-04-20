@@ -6,9 +6,22 @@ on:
     types:
       - completed
 jobs:
+  configuration:
+    name: Pre-Configuration
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request' }}
+    runs-on: ubuntu-latest
+    outputs:
+      UMBRACO_ENABLED: ${{ steps.config.outputs.UMBRACO_ENABLED }}
+    steps:
+      - name: Get Umbraco status
+        id: config
+        run: |
+          echo "::set-output name=UMBRACO_ENABLED::${{ secrets.UMBRACO_ENABLED }}"
+
   our_umbraco:
     name: Our.Umbraco Package Generation
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request' }}
+    needs: [ "configuration" ]
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request' && needs.configuration.outputs.UMBRACO_ENABLED == 'true' }}
     runs-on: windows-latest
     env:
       # Nuget Setup
