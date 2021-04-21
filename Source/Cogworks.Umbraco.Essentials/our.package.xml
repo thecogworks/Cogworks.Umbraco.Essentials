@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<umbPackage>
+  <info>
+    <package>
+      <name>Cogworks.Umbraco.Essentials</name>
+      <version>1.0.0</version>
+      <iconUrl></iconUrl>
+      <licence url="https://github.com/thecogworks/Cogworks.Umbraco.Essentials/blob/develop/LICENSE.md">MIT</licence>
+      <url>https://github.com/thecogworks/Cogworks.Umbraco.Essentials</url>
+      <requirements type="strict">
+        <major>8</major>
+        <minor>9</minor>
+        <patch>1</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Cogworks</name>
+      <website>https://github.com/thecogworks/Cogworks.Umbraco.Essentials</website>
+    </author>
+    <readme><![CDATA[Set of the Umbraco-related (C#, ASP.NET MVC) essentials including common components, extensions, helpers, services and more.]]></readme>
+  </info>
+  <files>
+    <file path="bin/Release/Cogworks.Umbraco.Essentials.dll" orgPath="bin/Cogworks.Umbraco.Essentials.dll" />
+    <file path="bin/Release/Cogworks.Essentials.dll" orgPath="bin/Cogworks.Essentials.dll" />
+    <!-- <folder path="UmbPackTest.Web/App_Plugins/CustomPackage" orgPath="App_Plugins/CustomPackage" /> -->
+  </files>
+  <Actions />
+  <control />
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+</umbPackage>

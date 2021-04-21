@@ -6,19 +6,45 @@ on:
     types:
       - completed
 jobs:
-  our_umbraco:
-    name: Our.Umbraco Package Generation
+  configuration:
+    name: Configuration
     if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request' }}
     runs-on: ubuntu-latest
+    outputs:
+      UMBRACO_ENABLED: ${{ steps.config.outputs.UMBRACO_ENABLED }}
+    steps:
+      - name: Get Umbraco status
+        id: config
+        run: |
+          echo "::set-output name=UMBRACO_ENABLED::${{ secrets.UMBRACO_ENABLED }}"
+
+  our_umbraco:
+    name: Our.Umbraco Package Generation
+    needs: [ "configuration" ]
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request' && needs.configuration.outputs.UMBRACO_ENABLED == 'true' }}
+    runs-on: windows-latest
     env:
       # Nuget Setup
       NUGET_VERSION: 'latest'
-      NUGET_OUTPUT: ${{ github.workspace }}/nuget/
-      NUGET_EXTRACTED: './.output/nuget/extracted/'
+      NUGET_OUTPUT: ${{ github.workspace }}\nuget\
+      NUGET_EXTRACTED: '${{ github.workspace }}\.output\nuget\extracted\'
 
-      # Project Setup
+      # Dotnet Setup
+      DOTNET_VERSION: 3.1.401
+
+      # Stop wasting time caching packages
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
+      # Disable sending usage data to Microsoft
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+      # Solution Setup
+      CONFIG: 'Release'
+      SOURCE: '.\Source'
       PROJECT_NAME: 'Cogworks.Umbraco.Essentials'
-      UMBRACO_OUTPUT: './.output/umbraco/'
+      VERSION: '1.0.0'
+      UMBRACO_OUTPUT: '${{ github.workspace }}\.output\umbraco\'
+      UMBRACO_OUTPUT_EXTRACTED: '${{ github.workspace }}\.output\umbraco\extracted'
 
     steps:
       - name: Checkout master
@@ -33,44 +59,80 @@ jobs:
           tag_check=$(git describe --exact-match `git rev-parse HEAD` | head -1)
           echo "VERSION=$tag_check" >> $GITHUB_ENV
 
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+
       - name: Configure NuGet
         uses: nuget/setup-nuget@v1
         with:
           nuget-version: ${{ env.NUGET_VERSION }}
 
-      - name: Download a single artifact
-        uses: aochmann/actions-download-artifact@1.0.2
-        with:
-          name: build_${{ env.PROJECT_NAME }}.${{ env.VERSION }}
-          path: ${{ env.NUGET_OUTPUT }}
+      - name: Install tools
+        run: dotnet tool restore
 
-      - name: Extract NuGet file
-        shell: pwsh
+      - name: NuGet Restore
+        shell: powershell
+        working-directory: ${{ github.workspace }}
         run: |
-          Install-Package -Name ${{ env.PROJECT_NAME }} -Source ${{ env.NUGET_OUTPUT }} -Destination ${{ env.NUGET_EXTRACTED }} -SkipDependencies
+          $solutions = Get-ChildItem -Path ${{ env.SOURCE }} -Recurse -Include *.sln
 
-      - name: Copy package dlls
-        shell: bash
+          foreach ($solutionFile in $solutions){
+            nuget restore "$solutionFile"
+          }
+
+      - name: Install Dependencies
+        shell: powershell
+        working-directory: ${{ github.workspace }}
         run: |
-          mkdir -p ${{ env.UMBRACO_OUTPUT }} && find ${{ env.NUGET_EXTRACTED }} -name "*.dll" -print0 | xargs -0 -I {} cp -r {} ${{ env.UMBRACO_OUTPUT }}
+          $solutions = Get-ChildItem -Path ${{ env.SOURCE }} -Recurse -Include *.sln
 
-      - name: Copy package App_Plugins
-        shell: bash
+          foreach ($solutionFile in $solutions){
+            dotnet restore "$solutionFile"
+          }
+
+      - name: Build
+        shell: powershell
+        working-directory: ${{ github.workspace }}
         run: |
-          mkdir -p ${{ env.UMBRACO_OUTPUT }} && find . -type d -regex ".*/${{ env.PROJECT_NAME }}.${{ env.VERSION }}/.*App_Plugins" -print0 |  xargs -0 -I {} cp -r {} ${{ env.UMBRACO_OUTPUT }}
+          $solutions = Get-ChildItem -Path ${{ env.SOURCE }} -Recurse -Include *.sln
 
-      - name: Check Umbraco output directory
-        shell: bash
+          foreach ($solutionFile in $solutions){
+            msbuild.exe "$solutionFile" `
+              /p:Configuration=${{ env.CONFIG }}
+          }
+
+      - name: Build Our Package
+        shell: powershell
+        working-directory: ${{ github.workspace }}
         run: |
-          is_empty_directory=$([ "$(ls -A ${{ env.UMBRACO_OUTPUT }})" ] && echo false || echo true)
+          $currentDirectory=$PWD
 
-          if [[ is_empty_directory == true ]]; then
-            echo "Empty output directory: ${{ env.UMBRACO_OUTPUT }}"
-            exit 1
-          fi
+          $packages = Get-ChildItem -Path ${{ env.SOURCE }} -Recurse -Include our.package.xml
 
-      - name: Upload Our.Umbraco package Artifact to GitHub Action
+          foreach ($package in $solutions){
+            cd "$($package.Directory.FullName)"
+
+            dotnet umbpack pack $package \
+             -v ${{ env.VERSION }} \
+             -n ${{ env.PROJECT_NAME }}.${{ env.VERSION }}.zip \
+             -o ${{ env.UMBRACO_OUTPUT }}
+
+             cd $currentDirectory
+          }
+
+      - name: Extract Zip
+        shell: powershell
+        run: |
+          $umbracoOurPath="${{ env.UMBRACO_OUTPUT }}\${{ env.PROJECT_NAME }}.${{ env.VERSION }}.zip"
+          Expand-Archive -Path $umbracoOurPath -DestinationPath ${{ env.UMBRACO_OUTPUT_EXTRACTED }}
+
+      - name: Upload Our.Umbraco package Artifact
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.PROJECT_NAME }}.${{ env.VERSION }}
-          path: ${{ env.UMBRACO_OUTPUT }}
+          path: ${{ env.UMBRACO_OUTPUT_EXTRACTED }}
