@@ -287,6 +287,7 @@
     <Compile Include="Helpers\DomainHelper.cs" />
     <Compile Include="Helpers\ExpressionHelper.cs" />
     <Compile Include="Infrastructure\ServerRegistrar.cs" />
+    <Compile Include="Models\ImageSource.cs" />
     <Compile Include="Models\ResponsiveImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaseEmailService.cs" />
