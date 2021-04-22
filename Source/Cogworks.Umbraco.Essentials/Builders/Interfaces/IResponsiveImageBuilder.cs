@@ -21,7 +21,7 @@ namespace Cogworks.Umbraco.Essentials.Builders.Interfaces
             bool enableWebP = false,
             int? quality = null);
 
-        IReadOnlyDictionary<string, string> BuildResponsiveImageSources(
+        IReadOnlyList<ImageSource> BuildResponsiveImageSources(
             IPublishedContent image,
             string cropPrefix,
             IReadOnlyDictionary<string, string> breakpoints = null,
@@ -30,6 +30,7 @@ namespace Cogworks.Umbraco.Essentials.Builders.Interfaces
             int? height = null,
             bool includeRetina = true,
             bool enableWebP = false,
-            int? quality = null);
+            int? quality = null,
+            string fileExtension = null);
     }
 }

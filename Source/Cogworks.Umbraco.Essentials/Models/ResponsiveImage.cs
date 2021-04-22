@@ -4,7 +4,7 @@ namespace Cogworks.Umbraco.Essentials.Models
 {
     public class ResponsiveImage
     {
-        public IReadOnlyDictionary<string, string> ImageSources { get; set; }
+        public IReadOnlyList<ImageSource> ImageSources { get; set; }
 
         public string ImageClass { get; set; }
 
