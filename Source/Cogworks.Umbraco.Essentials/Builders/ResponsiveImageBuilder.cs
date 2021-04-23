@@ -78,7 +78,7 @@ namespace Cogworks.Umbraco.Essentials.Builders
                 {
                     var imageExtension = fileExtension.HasValue()
                         ? fileExtension
-                        : Path.GetExtension(image.Url()?.TrimStart(StringConstants.Separators.Dot.ToChar()));
+                        : Path.GetExtension(image.Url())?.TrimStart(StringConstants.Separators.Dot.ToChar());
 
                     imageSources.Add(new ImageSource(imageSource, breakPoint.Value, $"image/{imageExtension}"));
                 }
