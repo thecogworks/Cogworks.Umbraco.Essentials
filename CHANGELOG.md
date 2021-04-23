@@ -1,4 +1,13 @@
-# [1.3.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.2.0...1.3.0) (2021-04-22)
+## [1.3.1](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.3.0...1.3.1) (2021-04-23)
+
+
+### Bug Fixes
+
+* trim dot from file extension ([f50e81a](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/f50e81a8c093f9abfe87f6602f8cd20dd7b279cd))
+
+
+
+# [1.3.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.2.0...1.3.0) (2021-04-23)
 
 
 ### Bug Fixes
