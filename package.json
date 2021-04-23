@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.3.1",
   "name": "cogworks-umbraco-essentials",
   "code": "Cogworks.Umbraco.Essentials",
   "description": "Set of the Umbraco-related (C#, ASP.NET MVC) essentials including common components, extensions, helpers, services and more.",
