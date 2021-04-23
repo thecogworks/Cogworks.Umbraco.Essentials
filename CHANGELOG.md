@@ -1,3 +1,18 @@
+# [1.3.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.2.0...1.3.0) (2021-04-22)
+
+
+### Bug Fixes
+
+* added quotes to env variable ([ac768e5](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/ac768e55511d8afa54c23c2f6490750cba20210f))
+
+
+### Features
+
+* add fallback for safari in webp is enabled ([3c24845](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/3c2484581b192e5d7a53abdfe441a6e3a6ee9d32))
+* added our package definition ([14576fc](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/14576fc5e4c54f7c5d1083ab4e37789d263a38c0))
+
+
+
 # [1.2.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.1.0...1.2.0) (2021-04-16)
 
 
