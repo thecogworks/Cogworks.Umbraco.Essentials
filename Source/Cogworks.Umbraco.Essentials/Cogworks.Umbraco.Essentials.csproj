@@ -48,8 +48,8 @@
     <Reference Include="ClientDependency.Core.Mvc, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ClientDependency-Mvc5.1.9.3\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Cogworks.Essentials, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Cogworks.Essentials.1.0.2\lib\netstandard2.0\Cogworks.Essentials.dll</HintPath>
+    <Reference Include="Cogworks.Essentials, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cogworks.Essentials.1.0.3\lib\netstandard2.0\Cogworks.Essentials.dll</HintPath>
     </Reference>
     <Reference Include="CSharpTest.Net.Collections, Version=14.906.1403.1082, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL">
       <HintPath>..\packages\CSharpTest.Net.Collections.14.906.1403.1082\lib\net40\CSharpTest.Net.Collections.dll</HintPath>
@@ -266,7 +266,6 @@
     <Compile Include="Constants\ErrorConstants.cs" />
     <Compile Include="Constants\ImageCropConstants.cs" />
     <Compile Include="Constants\RobotsConstants.cs" />
-    <Compile Include="Constants\StringConstants.SeparatosConstants.cs" />
     <Compile Include="Constants\StringConstants.cs" />
     <Compile Include="Constants\TempDataConstants.cs" />
     <Compile Include="Constants\TempDataConstants.Messages.cs" />

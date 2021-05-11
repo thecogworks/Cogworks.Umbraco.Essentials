@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Web;
 using Cogworks.Essentials.Extensions;
-using Cogworks.Umbraco.Essentials.Constants;
 using Umbraco.Core.Security;
 using Umbraco.Web.Security;
 
@@ -20,7 +19,7 @@ namespace Cogworks.Umbraco.Essentials.Extensions
         {
             var serverVariable = httpContext.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
             var serverForwardedIpAddresses = serverVariable?.Split(
-                new[] { StringConstants.Separators.Comma },
+                new[] { Cogworks.Essentials.Constants.StringConstants.Separators.Comma },
                 StringSplitOptions.RemoveEmptyEntries);
 
             return serverForwardedIpAddresses.HasAny()
