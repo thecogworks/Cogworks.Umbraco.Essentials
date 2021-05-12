@@ -8,7 +8,8 @@ namespace Cogworks.Umbraco.Essentials.Extensions
 {
     public static class ImageCropperExtensions
     {
-        public static string GetCropUrls(this IPublishedContent image, string cropAlias = null, int? width = null, int? height = null, bool includeRetina = true, bool enableWebP = false, int? quality = null, bool returnOnlyRetina = false)
+        public static string GetCropUrls(this IPublishedContent image, string cropAlias = null, int? width = null, int? height = null,
+            bool includeRetina = true, bool enableWebP = false, int? quality = null, bool returnOnlyRetina = false)
         {
             var imageUrl = GetCropUrlStandard(image, cropAlias, width, height, enableWebP, quality);
 
@@ -27,7 +28,8 @@ namespace Cogworks.Umbraco.Essentials.Extensions
             return imageUrl;
         }
 
-        public static string GetCropUrlStandard(this IPublishedContent image, string cropAlias = null, int? width = null, int? height = null, bool enableWebP = false, int? quality = null)
+        public static string GetCropUrlStandard(this IPublishedContent image, string cropAlias = null, int? width = null, int? height = null,
+            bool enableWebP = false, int? quality = null)
         {
             var imageUrl = cropAlias.HasValue() ? image.GetCropUrl($"{cropAlias}") : image.GetCropUrl();
 
@@ -44,7 +46,8 @@ namespace Cogworks.Umbraco.Essentials.Extensions
             return imageUrl;
         }
 
-        public static string GetCropUrlRetina(this IPublishedContent image, string cropAlias = null, int? width = null, int? height = null, bool enableWebP = false, int? quality = null)
+        public static string GetCropUrlRetina(this IPublishedContent image, string cropAlias = null, int? width = null, int? height = null,
+            bool enableWebP = false, int? quality = null)
         {
             var imageUrl = GetCropUrlStandard(image, cropAlias, width, height, enableWebP, quality);
 
