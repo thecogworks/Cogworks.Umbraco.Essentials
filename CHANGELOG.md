@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.3.1...1.4.0) (2021-05-12)
+
+
+### Features
+
+* adding method to handle single crop urls, standard and retina. ([5b30ef1](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/5b30ef1ab92d43403ae569cc77903f9f55e59a8d))
+
+
+
 ## [1.3.1](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.3.0...1.3.1) (2021-04-23)
 
 
