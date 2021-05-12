@@ -1,8 +1,5 @@
-﻿using System;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 using Cogworks.Essentials.Extensions;
-using Cogworks.Umbraco.Essentials.Constants;
 using Umbraco.Core;
 
 namespace Cogworks.Umbraco.Essentials.Extensions
@@ -11,6 +8,9 @@ namespace Cogworks.Umbraco.Essentials.Extensions
     {
         public static bool IsUmbracoPreview(this string input)
             => input.HasValue() && input.StartsWith("/umbraco/preview/");
+
+        public static Udi ToDocumentUdi(this string documentUdi)
+            => Udi.Parse(documentUdi);
 
         public static string ToAbsoluteUrl(this string url)
         {
@@ -43,33 +43,6 @@ namespace Cogworks.Umbraco.Essentials.Extensions
             var port = requestUrl.Port != 80 ? ":" + requestUrl.Port : string.Empty;
 
             return $"{requestUrl.Scheme}://{requestUrl.Host}{port}{VirtualPathUtility.ToAbsolute(url)}";
-        }
-
-        public static Uri ToUri(this string urlString)
-            => urlString.HasValue()
-                ? new Uri(urlString)
-                : null;
-
-        public static Udi ToDocumentUdi(this string documentUdi)
-            => Udi.Parse(documentUdi);
-
-        public static string GetIpAddressWithoutPort(this string ipAddress)
-        {
-            var portIndex = ipAddress.IndexOf(':');
-
-            return portIndex < 0
-                ? ipAddress
-                : ipAddress.Substring(0, portIndex);
-        }
-
-        public static string AddOrUpdateQueryParameter(this string url, string queryKey, string queryValue)
-        {
-            var splitted = url.Split(StringConstants.Separators.QuestionMark.ToCharArray());
-            var queryString = HttpUtility.ParseQueryString(splitted.Skip(1).FirstOrDefault() ?? string.Empty);
-
-            queryString[queryKey] = queryValue;
-
-            return $"{splitted.FirstOrDefault()}?{queryString}";
         }
     }
 }

@@ -336,3 +336,6 @@ dotnet_diagnostic.CS3008.severity = none
 dotnet_diagnostic.CS3009.severity = none
 dotnet_diagnostic.CS0114.severity = none
 dotnet_diagnostic.CS8019.severity = none
+
+# SA1208: System using directives should be placed before other using directives
+dotnet_diagnostic.SA1208.severity = none

@@ -451,5 +451,6 @@
     <Rule Id="SA1652" Action="Warning" />
     <Rule Id="SX1101" Action="Error" />
     <Rule Id="SX1309" Action="Error" />
+    <Rule Id="SA1208" Action="None" />
   </Rules>
 </RuleSet>
