@@ -9,6 +9,7 @@ namespace Cogworks.Umbraco.Essentials.Constants
             { ExtraLarge, "1440px" },
             { Large, "1024px" },
             { Medium, "768px" },
+            { Small, "568px" },
             { ExtraSmall, "375px" }
         };
 
