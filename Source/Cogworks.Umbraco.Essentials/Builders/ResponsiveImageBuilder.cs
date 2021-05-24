@@ -15,7 +15,7 @@ namespace Cogworks.Umbraco.Essentials.Builders
     {
         public ResponsiveImage Build(IPublishedContent image,
             string cropPrefix,
-            string altText,
+            string altText = null,
             IReadOnlyDictionary<string, string> breakpoints = null,
             string imageClass = null,
             string containerClass = null,
@@ -38,7 +38,7 @@ namespace Cogworks.Umbraco.Essentials.Builders
                 ImageSources = imageSources,
                 ImageClass = imageClass,
                 ContainerClass = containerClass,
-                AltText = altText
+                AltText = altText.HasValue() ? altText : image.Name
             };
 
             return model;
