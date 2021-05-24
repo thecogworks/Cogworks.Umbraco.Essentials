@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.3\build\Microsoft.CodeAnalysis.NetAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.3\build\Microsoft.CodeAnalysis.NetAnalyzers.props')" />
   <Import Project="..\packages\Microsoft.NetFramework.Analyzers.3.3.2\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.3.3.2\build\Microsoft.NetFramework.Analyzers.props')" />
@@ -288,6 +288,7 @@
     <Compile Include="Constants\StringConstants.cs" />
     <Compile Include="Constants\TempDataConstants.cs" />
     <Compile Include="Constants\TempDataConstants.Messages.cs" />
+    <Compile Include="Controllers\Actions\ResponsiveImageSurfaceController.cs" />
     <Compile Include="ExtendedTypes\StringWriterEncoded.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\HtmlStringExtensions.cs" />
@@ -321,6 +322,7 @@
     <None Include="app.config" />
     <None Include="Cogworks.Umbraco.Essentials.nuspec" />
     <None Include="packages.config" />
+    <None Include="ViewFiles\_ResponsiveImage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.3\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll" />

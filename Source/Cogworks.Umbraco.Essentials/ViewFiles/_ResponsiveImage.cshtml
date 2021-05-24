@@ -1,0 +1,23 @@
+﻿@*
+    COpy this view to ~/Views/Partials/Shared/_ResponsiveImage.cshtml
+    Usage example => @Html.Action("ResponsiveImage", "ResponsiveImageSurface", new { image = Model.Image, cropPrefix = ImageCropConstants.ImageBlock, enableWebP = true})
+
+*@
+@using Cogworks.Essentials.Extensions
+@model Cogworks.Umbraco.Essentials.Models.ResponsiveImage
+
+@if (Model == null || !Model.ImageSources.HasAny())
+{
+    return;
+}
+
+<picture class="@Model.ContainerClass">
+
+    @foreach (var imageSource in Model.ImageSources)
+    {
+        <source media="(min-width: @imageSource.Breakpoint)" srcset="@imageSource.Source" type="@imageSource.Type">
+    }
+
+    <img class="@Model.ImageClass" src="@Model.ImageSources.FirstOrDefault().Source" alt="@Model.AltText" loading="lazy" />
+
+</picture>
