@@ -12,7 +12,8 @@ namespace Cogworks.Umbraco.Essentials.Controllers.Actions
     {
         private readonly IResponsiveImageBuilder _responsiveImageBuilder;
 
-        public ResponsiveImageSurfaceController(IResponsiveImageBuilder responsiveImageBuilder) => _responsiveImageBuilder = responsiveImageBuilder;
+        public ResponsiveImageSurfaceController(IResponsiveImageBuilder responsiveImageBuilder)
+            => _responsiveImageBuilder = responsiveImageBuilder;
 
         [ChildActionOnly]
         public virtual ActionResult ResponsiveImage(IPublishedContent image, string cropPrefix, string altText = null,
