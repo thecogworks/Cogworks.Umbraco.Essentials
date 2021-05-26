@@ -45,8 +45,8 @@
     <Reference Include="AngleSharp.Css, Version=0.15.0.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
       <HintPath>..\packages\AngleSharp.Css.0.15.0\lib\net472\AngleSharp.Css.dll</HintPath>
     </Reference>
-    <Reference Include="ClientDependency.Core, Version=1.9.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ClientDependency.1.9.9\lib\net45\ClientDependency.Core.dll</HintPath>
+    <Reference Include="ClientDependency.Core, Version=1.9.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency.1.9.10\lib\net45\ClientDependency.Core.dll</HintPath>
     </Reference>
     <Reference Include="ClientDependency.Core.Mvc, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ClientDependency-Mvc5.1.9.3\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
@@ -288,6 +288,7 @@
     <Compile Include="Constants\StringConstants.cs" />
     <Compile Include="Constants\TempDataConstants.cs" />
     <Compile Include="Constants\TempDataConstants.Messages.cs" />
+    <Compile Include="Controllers\Actions\ResponsiveImageSurfaceController.cs" />
     <Compile Include="ExtendedTypes\StringWriterEncoded.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\HtmlStringExtensions.cs" />
@@ -322,6 +323,7 @@
     <None Include="app.config" />
     <None Include="Cogworks.Umbraco.Essentials.nuspec" />
     <None Include="packages.config" />
+    <None Include="ViewFiles\_ResponsiveImage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.3\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll" />
