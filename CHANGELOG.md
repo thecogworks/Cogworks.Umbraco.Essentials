@@ -1,3 +1,12 @@
+## [1.5.1](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.5.0...1.5.1) (2021-05-27)
+
+
+### Features
+
+* updating project references for essentials 1.1.1 ([c640b68](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/c640b6891780efda820472c57680e6c82b838522))
+
+
+
 # [1.5.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.4.0...1.5.0) (2021-05-27)
 
 
