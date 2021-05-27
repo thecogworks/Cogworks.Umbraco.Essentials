@@ -1,3 +1,16 @@
+# [1.5.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.4.0...1.5.0) (2021-05-27)
+
+
+### Features
+
+* adding link HasValue extension ([1844009](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/184400903c47ec6a3b995e84eb955517ea33d7b6))
+* adding responsive partial view for easier usage ([85255de](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/85255decc4a70a9c2714acf475fc2b38895b27dd))
+* adding standard small "S" breakpoint ([1f5cb8d](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/1f5cb8da550617de42ac3da9fdd53d8759e891fa))
+* altText is now nullable, if null use the image name ([c0a28a4](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/c0a28a4316e469cb0f8f3dc7956899a6df4f3c62))
+* update Cogworks.Essentials to 1.1.1 ([ec21902](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/ec21902f5a71624e5547466aac6140b2d5fd3527))
+
+
+
 # [1.4.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.3.1...1.4.0) (2021-05-12)
 
 
