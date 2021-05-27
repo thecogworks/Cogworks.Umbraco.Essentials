@@ -17,9 +17,9 @@
       <group targetFramework="net472">
         <dependency id="UmbracoCms.Core" version="8.9.1" />
         <dependency id="UmbracoCms.Web" version="8.9.1" />
-        <dependency id="Cogworks.Essentials" version="1.0.2" />
+        <dependency id="Cogworks.Essentials" version="1.1.1" />
       </group>
-  </dependencies>
+    </dependencies>
   </metadata>
   <files>
     <file src="bin\Release\**\Cogworks.Umbraco.Essentials.dll" target="lib/net472" />
