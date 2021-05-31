@@ -77,16 +77,18 @@ namespace Cogworks.Umbraco.Essentials.Builders
                         imageSources.Add(new ImageSource(imageSourceWithWebP, breakPoint.Value, $"image/{ImageCropConstants.WebP}"));
                     }
                 }
-
-                var imageSource = image.GetCropUrls(cropAlias, width, height, includeRetina);
-
-                if (imageSource.HasValue())
+                else
                 {
-                    var imageExtension = fileExtension.HasValue()
-                        ? fileExtension
-                        : Path.GetExtension(image.Url())?.TrimStart(StringConstants.Separators.Dot.ToChar());
+                    var imageSource = image.GetCropUrls(cropAlias, width, height, includeRetina);
 
-                    imageSources.Add(new ImageSource(imageSource, breakPoint.Value, $"image/{imageExtension}"));
+                    if (imageSource.HasValue())
+                    {
+                        var imageExtension = fileExtension.HasValue()
+                            ? fileExtension
+                            : Path.GetExtension(image.Url())?.TrimStart(StringConstants.Separators.Dot.ToChar());
+
+                        imageSources.Add(new ImageSource(imageSource, breakPoint.Value, $"image/{imageExtension}"));
+                    }
                 }
             }
 
