@@ -16,7 +16,7 @@ namespace Cogworks.Umbraco.Essentials.Builders
         public ResponsiveImage Build(IPublishedContent image,
             string cropPrefix,
             string altText = null,
-            IReadOnlyDictionary<string, string> breakpoints = null,
+            ImageBreakpoints breakpoints = null,
             string imageClass = null,
             string containerClass = null,
             string cropSeparator = StringConstants.Separators.Hyphen,
@@ -46,7 +46,7 @@ namespace Cogworks.Umbraco.Essentials.Builders
 
         public IReadOnlyList<ImageSource> BuildResponsiveImageSources(IPublishedContent image,
             string cropPrefix,
-            IReadOnlyDictionary<string, string> breakpoints = null,
+            ImageBreakpoints breakpoints = null,
             string cropSeparator = StringConstants.Separators.Hyphen,
             int? width = null,
             int? height = null,
@@ -55,20 +55,26 @@ namespace Cogworks.Umbraco.Essentials.Builders
             int? quality = null,
             string fileExtension = null)
         {
-            breakpoints ??= BreakPointConstants.DefaultBreakpoints;
+            if (breakpoints.HasValue() && !breakpoints.BreakpointsValues.HasAny())
+            {
+                breakpoints = new ImageBreakpoints
+                {
+                    BreakpointsValues = BreakPointConstants.DefaultBreakpoints
+                };
+            }
 
             var imageSources = new List<ImageSource>();
 
-            foreach (var breakPoint in breakpoints)
+            foreach (var breakPoint in breakpoints.BreakpointsValues)
             {
                 var cropAlias = $"{cropPrefix}{cropSeparator}{breakPoint.Key}";
 
                 if (enableWebP)
                 {
-                    var imageSourceWithWebp = image.GetCropUrls(cropAlias, width, height, includeRetina, true, quality);
-                    if (imageSourceWithWebp.HasValue())
+                    var imageSourceWithWebP = image.GetCropUrls(cropAlias, width, height, includeRetina, true, quality);
+                    if (imageSourceWithWebP.HasValue())
                     {
-                        imageSources.Add(new ImageSource(imageSourceWithWebp, breakPoint.Value, $"image/{ImageCropConstants.WebP}"));
+                        imageSources.Add(new ImageSource(imageSourceWithWebP, breakPoint.Value, $"image/{ImageCropConstants.WebP}"));
                     }
                 }
 
