@@ -1,3 +1,12 @@
+## [1.5.2](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.5.1...1.5.2) (2021-06-10)
+
+
+### Bug Fixes
+
+*  fixing duplicate breakpoint when webp is true ([44b2cff](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/44b2cff680355b37888171e86796383c90c0f266))
+
+
+
 ## [1.5.1](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.5.0...1.5.1) (2021-05-27)
 
 
