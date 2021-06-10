@@ -58,7 +58,7 @@ namespace Cogworks.Umbraco.Essentials.Builders
         {
             if (!breakpoints.HasAny())
             {
-                breakpoints = new ImageBreakpoints(BreakPointConstants.DefaultBreakpoints.ToList());
+                breakpoints = new ImageBreakpoints(BreakPointConstants.DefaultBreakpoints);
             }
 
             var imageSources = new List<ImageSource>();
