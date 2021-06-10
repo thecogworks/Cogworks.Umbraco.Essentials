@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Cogworks.Essentials.Constants;
 using Cogworks.Essentials.Extensions;
 using Cogworks.Umbraco.Essentials.Builders.Interfaces;
+using Cogworks.Umbraco.Essentials.Models;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web.Mvc;
 
@@ -17,7 +17,7 @@ namespace Cogworks.Umbraco.Essentials.Controllers.Actions
 
         [ChildActionOnly]
         public virtual ActionResult ResponsiveImage(IPublishedContent image, string cropPrefix, string altText = null,
-            IReadOnlyDictionary<string, string> breakpoints = null, string imageClass = null, string containerClass = null,
+            ImageBreakpoints breakpoints = null, string imageClass = null, string containerClass = null,
             string cropSeparator = StringConstants.Separators.Hyphen, int? width = null, int? height = null, bool includeRetina = true,
             bool enableWebP = false, int? quality = null)
         {

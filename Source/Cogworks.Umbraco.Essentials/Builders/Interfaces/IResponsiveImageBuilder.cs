@@ -11,7 +11,7 @@ namespace Cogworks.Umbraco.Essentials.Builders.Interfaces
             IPublishedContent image,
             string cropPrefix,
             string altText = null,
-            IReadOnlyDictionary<string, string> breakpoints = null,
+            ImageBreakpoints breakpoints = null,
             string imageClass = null,
             string containerClass = null,
             string cropSeparator = StringConstants.Separators.Hyphen,
@@ -24,7 +24,7 @@ namespace Cogworks.Umbraco.Essentials.Builders.Interfaces
         IReadOnlyList<ImageSource> BuildResponsiveImageSources(
             IPublishedContent image,
             string cropPrefix,
-            IReadOnlyDictionary<string, string> breakpoints = null,
+            ImageBreakpoints breakpoints = null,
             string cropSeparator = StringConstants.Separators.Hyphen,
             int? width = null,
             int? height = null,
