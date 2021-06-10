@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Cogworks.Essentials.Extensions;
 using Cogworks.Umbraco.Essentials.Builders.Interfaces;
 using Cogworks.Umbraco.Essentials.Constants;
@@ -55,17 +56,14 @@ namespace Cogworks.Umbraco.Essentials.Builders
             int? quality = null,
             string fileExtension = null)
         {
-            if (breakpoints.HasValue() && !breakpoints.BreakpointsValues.HasAny())
+            if (!breakpoints.HasAny())
             {
-                breakpoints = new ImageBreakpoints
-                {
-                    BreakpointsValues = BreakPointConstants.DefaultBreakpoints
-                };
+                breakpoints = new ImageBreakpoints(BreakPointConstants.DefaultBreakpoints.ToList());
             }
 
             var imageSources = new List<ImageSource>();
 
-            foreach (var breakPoint in breakpoints.BreakpointsValues)
+            foreach (var breakPoint in breakpoints)
             {
                 var cropAlias = $"{cropPrefix}{cropSeparator}{breakPoint.Key}";
 
