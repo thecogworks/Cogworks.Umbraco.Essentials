@@ -1,3 +1,12 @@
+## [1.5.3](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.5.2...1.5.3) (2021-06-24)
+
+
+### Bug Fixes
+
+* removing unnecessary json formatting  ([3c7f00e](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/3c7f00eeb57417a238594916473ef9bfe4af7bcd)), closes [/our.umbraco.com/forum/using-umbraco-and-getting-started/105550-umbraco-8-webapi-return-camelcase#comment-329297](https://github.com//our.umbraco.com/forum/using-umbraco-and-getting-started/105550-umbraco-8-webapi-return-camelcase/issues/comment-329297)
+
+
+
 ## [1.5.2](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.5.1...1.5.2) (2021-06-10)
 
 
