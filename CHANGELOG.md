@@ -1,3 +1,12 @@
+## [1.5.4](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.5.3...1.5.4) (2021-09-10)
+
+
+### Bug Fixes
+
+* making package compatible with umbraco 8.16.0 ([b556e16](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/b556e16e85313ac4688e0f88a9093b5dce461b66))
+
+
+
 ## [1.5.3](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.5.2...1.5.3) (2021-06-24)
 
 
