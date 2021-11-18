@@ -18,6 +18,11 @@
         <source media="(min-width: @imageSource.Breakpoint)" srcset="@imageSource.Source" type="@imageSource.Type">
     }
 
-    <img class="@Model.ImageClass" src="@Model.ImageSources.FirstOrDefault().Source" alt="@Model.AltText" loading="lazy" />
+    <img class="@Model.ImageClass"
+         src="@Model.ImageSources.FirstOrDefault().Source"
+         alt="@Model.AltText"
+         loading="@Model.LazyLoadValue"
+         @{if (Model.Height > 0) { <text>height="@Model.Height"</text> } }
+         @{if (Model.Width > 0) { <text>width="@Model.Width"</text> } }/>
 
 </picture>

@@ -19,7 +19,9 @@ namespace Cogworks.Umbraco.Essentials.Builders.Interfaces
             int? height = null,
             bool includeRetina = true,
             bool enableWebP = false,
-            int? quality = null);
+            int? quality = null,
+            bool isLazy = true,
+            bool addDefaultDimensions = false);
 
         IReadOnlyList<ImageSource> BuildResponsiveImageSources(
             IPublishedContent image,

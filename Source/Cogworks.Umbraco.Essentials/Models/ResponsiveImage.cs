@@ -11,5 +11,11 @@ namespace Cogworks.Umbraco.Essentials.Models
         public string ContainerClass { get; set; }
 
         public string AltText { get; set; }
-    }
+
+        public string LazyLoadValue { get; set; }
+
+        public int Height { get; set; }
+
+        public int Width { get; set; }
+        }
 }

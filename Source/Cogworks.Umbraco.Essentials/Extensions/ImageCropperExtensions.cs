@@ -1,4 +1,6 @@
-﻿using System.Web;
+﻿using System.Collections.Specialized;
+using System.Linq;
+using System.Web;
 using Cogworks.Essentials.Extensions;
 using Cogworks.Umbraco.Essentials.Constants;
 using Umbraco.Core.Models.PublishedContent;
@@ -95,12 +97,10 @@ namespace Cogworks.Umbraco.Essentials.Extensions
         {
             var query = HttpUtility.ParseQueryString(imageCrop);
 
-            if (!int.TryParse(query.Get(ImageCropConstants.Width), out var originalWidth) || originalWidth < 1)
-            {
-                return null;
-            }
+            var originalWidth = GetValueFromCrops(query, ImageCropConstants.Width);
+            var originalHeight = GetValueFromCrops(query, ImageCropConstants.Height);
 
-            if (!int.TryParse(query.Get(ImageCropConstants.Height), out var originalHeight) || originalHeight < 1)
+            if (originalWidth < 1 || originalHeight < 1)
             {
                 return null;
             }
@@ -112,6 +112,18 @@ namespace Cogworks.Umbraco.Essentials.Extensions
             query[ImageCropConstants.Height] = height.ToString();
 
             return HttpUtility.UrlDecode(query.ToString());
+        }
+
+        public static int GetValueFromCrops(NameValueCollection cropUrl, string parameter)
+        {
+            if (cropUrl == null)
+            {
+                return 0;
+            }
+
+            return !int.TryParse(cropUrl.GetValues(parameter)?.FirstOrDefault(), out var cropValue)
+                ? 0
+                : cropValue;
         }
     }
 }
