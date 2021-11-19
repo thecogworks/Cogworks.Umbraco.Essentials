@@ -17,5 +17,5 @@ namespace Cogworks.Umbraco.Essentials.Models
         public int Height { get; set; }
 
         public int Width { get; set; }
-        }
+    }
 }
