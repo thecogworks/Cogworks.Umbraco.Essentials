@@ -27,7 +27,7 @@ namespace Cogworks.Umbraco.Essentials.Builders
             bool includeRetina = true,
             bool enableWebP = false,
             int? quality = null,
-            bool isLazy = true,
+            bool isLazy = false,
             bool enableDefaultDimensions = false)
         {
             var imageSources = BuildResponsiveImageSources(image, cropPrefix, breakpoints, cropSeparator, width, height, includeRetina, enableWebP, quality);
