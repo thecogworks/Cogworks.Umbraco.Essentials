@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Web;
 using Cogworks.Essentials.Extensions;
 using Cogworks.Umbraco.Essentials.Builders.Interfaces;
 using Cogworks.Umbraco.Essentials.Constants;
@@ -25,7 +26,9 @@ namespace Cogworks.Umbraco.Essentials.Builders
             int? height = null,
             bool includeRetina = true,
             bool enableWebP = false,
-            int? quality = null)
+            int? quality = null,
+            bool isLazy = false,
+            bool enableDefaultDimensions = false)
         {
             var imageSources = BuildResponsiveImageSources(image, cropPrefix, breakpoints, cropSeparator, width, height, includeRetina, enableWebP, quality);
 
@@ -39,10 +42,13 @@ namespace Cogworks.Umbraco.Essentials.Builders
                 ImageSources = imageSources,
                 ImageClass = imageClass,
                 ContainerClass = containerClass,
-                AltText = altText.HasValue() ? altText : image.Name
+                AltText = altText.HasValue() ? altText : image.Name,
+                LoadValue = isLazy ? "lazy" : "eager"
             };
 
-            return model;
+            return enableDefaultDimensions
+                ? AddDefaultDimensions(model, width, height)
+                : model;
         }
 
         public IReadOnlyList<ImageSource> BuildResponsiveImageSources(IPublishedContent image,
@@ -93,6 +99,23 @@ namespace Cogworks.Umbraco.Essentials.Builders
             return imageSources.HasAny()
                 ? imageSources
                 : null;
+        }
+
+        private static ResponsiveImage AddDefaultDimensions(ResponsiveImage image, int? width = null, int? height = null)
+        {
+            var cropUrl = (height == null || height < 1) || (width == null || width < 1)
+                ? HttpUtility.ParseQueryString(image.ImageSources.FirstOrDefault().Source)
+                : null;
+
+            image.Height = height != null && height > 0
+                ? (int)height
+                : ImageCropperExtensions.GetValueFromCrops(cropUrl, ImageCropConstants.Height);
+
+            image.Width = width != null && width > 0
+                ? (int)width
+                : ImageCropperExtensions.GetValueFromCrops(cropUrl, ImageCropConstants.Width);
+
+            return image;
         }
     }
 }
