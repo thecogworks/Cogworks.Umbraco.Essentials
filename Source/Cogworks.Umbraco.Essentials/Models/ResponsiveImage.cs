@@ -12,7 +12,7 @@ namespace Cogworks.Umbraco.Essentials.Models
 
         public string AltText { get; set; }
 
-        public string LazyLoadValue { get; set; }
+        public string LoadValue { get; set; }
 
         public int Height { get; set; }
 

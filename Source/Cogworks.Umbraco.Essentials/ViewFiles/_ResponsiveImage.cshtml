@@ -1,7 +1,6 @@
 ﻿@*
     Copy this view to ~/Views/Partials/Shared/_ResponsiveImage.cshtml
     Usage example => @Html.Action("ResponsiveImage", "ResponsiveImageSurface", new { image = Model.Image, cropPrefix = ImageCropConstants.ImageBlock, enableWebP = true})
-
 *@
 @using Cogworks.Essentials.Extensions
 @model Cogworks.Umbraco.Essentials.Models.ResponsiveImage
@@ -21,7 +20,7 @@
     <img class="@Model.ImageClass"
          src="@Model.ImageSources.FirstOrDefault().Source"
          alt="@Model.AltText"
-         loading="@Model.LazyLoadValue"
+         loading="@Model.LoadValue"
          @{if (Model.Height > 0) { <text>height="@Model.Height"</text> } }
          @{if (Model.Width > 0) { <text>width="@Model.Width"</text> } }/>
 

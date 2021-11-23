@@ -1,5 +1,4 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -44,7 +43,7 @@ namespace Cogworks.Umbraco.Essentials.Builders
                 ImageClass = imageClass,
                 ContainerClass = containerClass,
                 AltText = altText.HasValue() ? altText : image.Name,
-                LazyLoadValue = isLazy ? "lazy" : "eager"
+                LoadValue = isLazy ? "lazy" : "eager"
             };
 
             return enableDefaultDimensions
