@@ -1,3 +1,21 @@
+# [1.6.0](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.5.4...1.6.0) (2021-11-23)
+
+
+### Bug Fixes
+
+* fixed bracket format ([168a064](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/168a064a092de44900bbc276a6276dffa6913ed4))
+* updated gitflow and changelog settings to fix actions build issue ([abbfe7d](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/abbfe7d4606a277473b7f947fbdadb7f7b8be40f))
+
+
+### Features
+
+* added lazy option and default dimensions ([03007a7](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/03007a785768a285f2d28f6b4082f051eb5d63aa))
+* updated default dimensions property name ([579da51](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/579da511d134aa6e0d42f49fe4c76bcf06da31a3))
+* updated image load property name ([c7477dc](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/c7477dcc99a5f8271e2868cd672e027889a5da5f))
+* updated lazy load default value to be false ([c3ad9b5](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/commit/c3ad9b5c5b94b9f0aa4eae08b63fd2d11dd5216d))
+
+
+
 ## [1.5.4](https://github.com/thecogworks/Cogworks.Umbraco.Essentials/compare/1.5.3...1.5.4) (2021-09-10)
 
 
