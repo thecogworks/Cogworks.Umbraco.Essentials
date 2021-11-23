@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,7 +29,7 @@ namespace Cogworks.Umbraco.Essentials.Builders
             bool enableWebP = false,
             int? quality = null,
             bool isLazy = true,
-            bool addDefaultDimensions = false)
+            bool enableDefaultDimensions = false)
         {
             var imageSources = BuildResponsiveImageSources(image, cropPrefix, breakpoints, cropSeparator, width, height, includeRetina, enableWebP, quality);
 
@@ -47,7 +47,7 @@ namespace Cogworks.Umbraco.Essentials.Builders
                 LazyLoadValue = isLazy ? "lazy" : "eager"
             };
 
-            return addDefaultDimensions
+            return enableDefaultDimensions
                 ? AddDefaultDimensions(model, width, height)
                 : model;
         }
