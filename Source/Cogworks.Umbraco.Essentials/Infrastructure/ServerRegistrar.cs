@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Cogworks.Essentials.Extensions;
 using Cogworks.Umbraco.Essentials.Configurations;
 using Umbraco.Core.Sync;
 
@@ -19,6 +20,19 @@ namespace Cogworks.Umbraco.Essentials.Infrastructure
         // custom path here and it needs to be in this format:
         // http://www.mysite.com/umbraco
         public string GetCurrentServerUmbracoApplicationUrl()
-            => null;
+        {
+            var applicationHostName = AppSettingsConfiguration.ApplicationHostName;
+            var umbracoUseHttps = AppSettingsConfiguration.UmbracoUseHttps;
+
+            if (applicationHostName.HasValue())
+            {
+                var urlProtocol = umbracoUseHttps ? "https://" : "http://";
+                var currentServerUmbracoApplicationUrl = $"{urlProtocol}{applicationHostName}/umbraco";
+
+                return currentServerUmbracoApplicationUrl;
+            }
+
+            return null;
+        }
     }
 }
