@@ -9,5 +9,7 @@ namespace Cogworks.Umbraco.Essentials.Configurations
         public static string LiveDomain { get; } = AppSettings.Get<string>("LiveDomain");
 
         public static bool IsMasterServer { get; } = AppSettings.Get<bool>("IsMasterServer");
+
+        public static bool UmbracoUseHttps { get; } = AppSettings.Get<bool>("Umbraco.Core.UseHttps");
     }
 }
